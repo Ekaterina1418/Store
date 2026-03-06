@@ -52,9 +52,11 @@ export function Header() {
   };
 
   const menuItems = [
-    { name: 'О нас', href: '/about' },
+    { name: 'Оплата', href: '/payment' },
+    { name: 'Доставка', href: '/delivery' },
+    { name: 'Возврат товара', href: '/returns' },
     { name: 'Политика конфиденциальности', href: '/privacy' },
-    { name: 'Согласие на обработку данных', href: '/consent' },
+    { name: 'О нас', href: '/about' },
   ];
 
   return (

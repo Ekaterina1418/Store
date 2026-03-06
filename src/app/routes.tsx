@@ -11,6 +11,7 @@ import { Privacy } from './pages/Privacy';
 import { Consent } from './pages/Consent';
 import { DeliveryPage } from './pages/DeliveryPage';
 import { PaymentPage } from './pages/PaymentPage';
+import { Returns } from './pages/Returns';
 
 export const router = createBrowserRouter([
   {
@@ -28,6 +29,7 @@ export const router = createBrowserRouter([
       { path: 'consent', element: <Consent /> },
       { path: 'delivery', element: <DeliveryPage /> },
       { path: 'payment', element: <PaymentPage /> },
+      { path: 'returns', element: <Returns /> },
     ],
   },
 ]);

@@ -69,19 +69,19 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition">
+                <Link to="/returns" className="hover:text-white transition">
                   Возврат товара
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition">
+                <Link to="/privacy" className="hover:text-white transition">
                   Политика конфиденциальности
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition">
+                <Link to="/about" className="hover:text-white transition">
                   О нас
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
