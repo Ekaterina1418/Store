@@ -2,16 +2,21 @@ import { ShoppingCart, Heart } from 'lucide-react';
 import { Link } from 'react-router';
 import { useState } from 'react';
 
-interface ProductCardProps {
+interface Product {
   id: number;
   image: string;
   name: string;
   price: number;
   oldPrice?: number;
   discount?: string;
+  category?: string;
 }
 
-export function ProductCard({ id, image, name, price, oldPrice, discount }: ProductCardProps) {
+interface ProductCardProps {
+  product: Product;
+}
+
+export function ProductCard({ product }: ProductCardProps) {
   const [isFavorite, setIsFavorite] = useState(false);
   const [addedToCart, setAddedToCart] = useState(false);
 
@@ -28,19 +33,19 @@ export function ProductCard({ id, image, name, price, oldPrice, discount }: Prod
 
   return (
     <Link 
-      to={`/product/${id}`}
+      to={`/product/${product.id}`}
       className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition group block"
     >
       {/* Изображение товара */}
       <div className="relative overflow-hidden h-40 md:h-64">
         <img
-          src={image}
-          alt={name}
+          src={product.image}
+          alt={product.name}
           className="w-full h-full object-cover group-hover:scale-110 transition duration-300"
         />
-        {discount && (
+        {product.discount && (
           <div className="absolute top-2 left-2 md:top-3 md:left-3 bg-red-500 text-white px-2 py-0.5 md:px-3 md:py-1 rounded-full text-xs md:text-sm font-semibold">
-            {discount}
+            {product.discount}
           </div>
         )}
         <button 
@@ -63,16 +68,16 @@ export function ProductCard({ id, image, name, price, oldPrice, discount }: Prod
       {/* Информация о товаре */}
       <div className="p-3 md:p-4">
         <h3 className="text-sm md:text-lg font-semibold text-gray-800 mb-2 md:mb-3 min-h-[2.5rem] md:min-h-[3rem] line-clamp-2">
-          {name}
+          {product.name}
         </h3>
         
         <div className="flex items-end gap-1.5 md:gap-2 mb-3 md:mb-4">
           <span className="text-lg md:text-2xl font-bold text-[#1e3a8a]">
-            {price.toLocaleString('ru-RU')} ₽
+            {product.price.toLocaleString('ru-RU')} ₽
           </span>
-          {oldPrice && (
+          {product.oldPrice && (
             <span className="text-xs md:text-sm text-gray-400 line-through mb-0.5 md:mb-1">
-              {oldPrice.toLocaleString('ru-RU')} ₽
+              {product.oldPrice.toLocaleString('ru-RU')} ₽
             </span>
           )}
         </div>

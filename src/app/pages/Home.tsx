@@ -1,5 +1,5 @@
 import { HeroSlider } from '../components/HeroSlider';
-import { PromoSection } from '../components/PromoSection';
+import { CategoriesGrid } from '../components/CategoriesGrid';
 import { Benefits } from '../components/Benefits';
 import { ContactZone } from '../components/ContactZone';
 import { DeliveryInfo } from '../components/DeliveryInfo';
@@ -8,7 +8,7 @@ export function Home() {
   return (
     <>
       <HeroSlider />
-      <PromoSection />
+      <CategoriesGrid />
       <Benefits />
       <ContactZone />
       <DeliveryInfo />

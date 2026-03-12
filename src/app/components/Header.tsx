@@ -20,30 +20,8 @@ export function Header() {
   ];
 
   const handleCategoryClick = (category: string) => {
-    // Если не на главной, сначала переходим на главную
-    if (window.location.pathname !== '/') {
-      navigate('/?category=' + encodeURIComponent(category));
-      setTimeout(() => {
-        const element = document.getElementById('catalog-section');
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }, 100);
-    } else {
-      // Уже на главной - просто прокручиваем и фильтруем
-      const urlParams = new URLSearchParams(window.location.search);
-      urlParams.set('category', category);
-      window.history.replaceState({}, '', '?' + urlParams.toString());
-      
-      // Отправляем событие для фильтрации
-      window.dispatchEvent(new CustomEvent('filterChange', { detail: { category } }));
-      
-      // Прокручиваем к каталогу
-      const element = document.getElementById('catalog-section');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
+    // Переходим на страницу категории
+    navigate(`/category/${encodeURIComponent(category)}`);
     
     // Закрываем меню
     setIsCatalogOpen(false);

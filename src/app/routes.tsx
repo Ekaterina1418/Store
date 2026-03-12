@@ -12,6 +12,7 @@ import { Consent } from './pages/Consent';
 import { DeliveryPage } from './pages/DeliveryPage';
 import { PaymentPage } from './pages/PaymentPage';
 import { Returns } from './pages/Returns';
+import { Category } from './pages/Category';
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +31,7 @@ export const router = createBrowserRouter([
       { path: 'delivery', element: <DeliveryPage /> },
       { path: 'payment', element: <PaymentPage /> },
       { path: 'returns', element: <Returns /> },
+      { path: 'category/:name', element: <Category /> },
     ],
   },
 ]);
